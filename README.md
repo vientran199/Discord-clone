@@ -18,7 +18,7 @@ Features:
 - Full responsivity and mobile UI
 - Light / Dark mode
 - Websocket fallback: Polling with alerts
-- ORM using Prisma
+- ORM(Object Relational Mapping) using Prisma
 - MySQL database using Planetscale
 - Authentication with Clerk
 
