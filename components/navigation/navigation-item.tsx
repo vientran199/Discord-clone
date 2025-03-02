@@ -29,7 +29,7 @@ export const NavigationItem = ({
             <ActionTooltip
                 side="right"
                 align="center"
-                label="name"
+                label={name}
             >
                 <button
                     onClick={onClick}
@@ -49,6 +49,7 @@ export const NavigationItem = ({
                             fill
                             src={imageUrl}
                             alt="Channel"
+                            sizes='(max-width: 40px), (max-height: 40px)'
                         />
                     </div>
                 </button>

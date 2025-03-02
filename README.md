@@ -29,6 +29,7 @@ Libraries:
 - Typescript
 - Tailwind Css
 - Eslint
+- Zustand
 
 Using node 20.18.1
 

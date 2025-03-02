@@ -2,7 +2,8 @@
 const nextConfig = {
     images: {
         domains: [
-            "k5rddzuw5z.ufs.sh" //config to fix invalid src prop on `next/image`
+            "k5rddzuw5z.ufs.sh", //config to fix invalid src prop on `next/image`
+            "utfs.io"
         ]
     }
 }
