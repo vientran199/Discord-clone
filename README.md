@@ -14,7 +14,7 @@ Features:
 - Unique invite link generation & full working invite system
 - Infinite loading for messages in batches of 10 (tanstack/query)
 - Server creation and customization
-- Beautiful UI using TailwindCSS and ShadcnUI
+- Beautiful UI using TailwindCSS and ShadcnUI(npx shadcn-ui@0.7.0 init)
 - Full responsivity and mobile UI
 - Light / Dark mode
 - Websocket fallback: Polling with alerts
@@ -29,6 +29,8 @@ Libraries:
 - Typescript
 - Tailwind Css
 - Eslint
+
+Using node 20.18.1
 
 ## Getting Started
 
