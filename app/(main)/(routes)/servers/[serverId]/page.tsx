@@ -1,14 +1,53 @@
-const ServerIdPage = () => {
+import { auth } from "@clerk/nextjs/server";
+import { currentProfile } from "@/lib/current-profile";
+import { db } from "@/lib/db";
+import { redirect } from "next/navigation";
 
-    return (
+interface ServerIdPageProps {
+    params: {
+        serverId: string;
+    }
+};
 
-        <div className="server-id-page">
-            <div className="server-id-page__header">
-                <h1>Server ID</h1>
-                <p>Enter your server ID to get started</p>
-            </div>
-        </div>
-    )
+const ServerIdPage = async ({
+    params
+}: ServerIdPageProps) => {
+    const profile = await currentProfile()
+
+    if (!profile) {
+        const { redirectToSignIn } = auth()
+        return redirectToSignIn()
+    }
+
+    const server = await db.server.findUnique({
+        where: {
+            id: params.serverId,
+            members: {
+                some: {
+                    profileId: profile.id
+                }
+            }
+        },
+        include: {
+            channels: {
+                where: {
+                    name: "general"
+                },
+                orderBy: {
+                    createdAt: "asc"
+                }
+            }
+        }
+    })
+
+    const initialChannel = server?.channels[0];
+
+    if (initialChannel?.name !== "general") {
+        return null;
+    };
+
+    return redirect(`/servers/${params.serverId}/channels/${initialChannel.id}`)
+
 }
 
 export default ServerIdPage
