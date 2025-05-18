@@ -33,6 +33,20 @@ Libraries:
 
 Using node 20.18.1
 
+## How to using Prisma
+
+Generate prisma db
+
+```bash
+npx prisma generate
+```
+
+push db
+
+```bash
+npx prisma db push
+```
+
 ## Getting Started
 
 First, run the development server:
