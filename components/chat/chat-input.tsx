@@ -66,7 +66,7 @@ export const ChatInput = ({
                     name="content"
                     render={({ field }) => (
                         <FormItem>
-                            <FormControl>
+                            <FormControl className='w-full'>
                                 <div className='relative p-4 pb-6'>
                                     <button
                                         type='button'
