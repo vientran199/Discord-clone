@@ -47,6 +47,12 @@ push db
 npx prisma db push
 ```
 
+Open prisma studio
+
+```bash
+npx prisma studio
+```
+
 ## Getting Started
 
 First, run the development server:
